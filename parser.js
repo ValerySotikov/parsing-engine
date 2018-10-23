@@ -49,10 +49,12 @@ needle('get', resourceURL + '/resumes').then((res) => {
         lastVisit: ''
       };
 
+      let activity = [];
       let result = $('.activities .row .value').map((index, item) => {
-        return item.children[0].data;
+       activity.push(item.children[0].data); 
       });
-      console.log(result);
+      user.activity.signupDate = activity[0];
+      user.activity.lastVisit 
     });
   });
 }).then(() => {
